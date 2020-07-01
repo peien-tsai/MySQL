@@ -1,0 +1,40 @@
+/* Database Schema :  my_test_db */
+
+DROP DATABASE IF EXISTS  my_test_db;
+CREATE DATABASE IF NOT EXISTS my_test_db;
+CREATE USER IF NOT EXISTS 'dbuser'@'localhost' IDENTIFIED with mysql_native_password by 'aabb1234';
+GRANT ALL PRIVILEGES ON my_test_db.* TO 'dbuser'@'localhost';
+
+USE my_test_db;
+
+SET FOREIGN_KEY_CHECKS = 0; 
+
+DROP Table IF EXISTS product; 
+DROP Table IF EXISTS product_class; 
+
+CREATE TABLE  product
+(  id        	INT NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+   class_id  	INT NOT NULL,
+   name      	VARCHAR(60) NOT NULL,
+   price      	INT NOT NULL  DEFAULT 0,
+   counts       INT NOT NULL  DEFAULT 0,
+   FOREIGN KEY(class_id) REFERENCES PRODUCT_ClASS(id) 
+) ENGINE = INNODB;
+
+CREATE TABLE  product_class
+(  id    	INT NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+   name 	VARCHAR(60) NOT NULL
+) ENGINE = INNODB;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+INSERT INTO PRODUCT_ClASS (name) VALUES ('Others');
+INSERT INTO PRODUCT_ClASS (name) VALUES ('APPLE');
+INSERT INTO PRODUCT_ClASS (name) VALUES ('SAMSUNG');
+INSERT INTO PRODUCT_ClASS (name) VALUES ('HTC');
+INSERT INTO PRODUCT_ClASS (name) VALUES ('ASUS');
+INSERT INTO PRODUCT_ClASS (name) VALUES ('Nokia');
+
+
+
+
