@@ -73,6 +73,7 @@ AUTO_INCREMENT = 100;  -- 預設初始值為100
 
 INSERT INTO mem(mname)
 VALUES('David Ho'),('Maria Eang'),('Pam Pan'),('Tina Lee'),('Jean Tsao');
+			       
 SELECT LAST_INSERT_ID(); -- 新增多筆資料只會告訴你第一筆資料的編號
 
 INSERT INTO mem(mname)
