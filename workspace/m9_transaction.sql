@@ -1,13 +1,14 @@
-ALTER  TABLE department 
+-- ALTER  TABLE department 
 
--- P.171
+-- P.171 Explicit Transaction:rollback 外顯式交易(回復方式結束交易)
 START TRANSACTION;
 INSERT INTO department VALUES(601,'RD',1001);
 INSERT INTO department VALUES(602,'IT',null);
 SELECT * FROM department;
 ROLLBACK;
 SELECT * FROM department;
--- P.172
+
+-- P.172 Explicit Transaction:rollback 外顯式交易之commit(確認方式結束交易)
 START TRANSACTION;
 INSERT INTO department VALUES(601,'RD',1001);
 INSERT INTO department VALUES(602,'IT',null);
@@ -15,7 +16,7 @@ SELECT * FROM department;
 COMMIT;
 SELECT * FROM department;
 
--- P.173
+-- P.173 Implicit Transaction 隱含式交易 
 SET AutoCommit = 0;
 INSERT INTO department VALUES(605,'RD',1001);
 INSERT INTO department VALUES(606,'IT',null);
