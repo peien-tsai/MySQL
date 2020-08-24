@@ -11,10 +11,10 @@ SELECT ename 'Employee Name',salary*12 'Annual Salary' FROM employee;
 
 SELECT SUBSTRING(ename,1,1) '姓氏' FROM employee; -- 截取部分字串 (string,position,length)
 SELECT SUBSTRING(ename,2) '姓氏' FROM employee; -- 截取部分字串 (string,position)以後
-SELECT SUBSTRING('David Wang',1,5) 'name' FROM employee; 
-SELECT SUBSTRING('David Wang',7) 'name' FROM employee;
-SELECT SUBSTRING('David Wang',-4) 'name' FROM employee; -- 負值，從右邊數之
-SELECT SUBSTRING('David Wang',-4,2) 'name' FROM employee; 
+SELECT SUBSTRING('David Wang',1,5) ; 
+SELECT SUBSTRING('David Wang',7) ;
+SELECT SUBSTRING('David Wang',-4); -- 負值，從右邊數之
+SELECT SUBSTRING('David Wang',-4,2) ; 
 
 SELECT CONCAT(ename,' is a ', title)'員工' FROM employee; -- 串接字串
 SELECT LENGTH('我是一個student')'length'; -- 字串長度佔多少個bytes(表示UTF8一個中文占3bytes)
